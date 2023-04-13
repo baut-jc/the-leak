@@ -6,15 +6,20 @@ import {
   Routes 
 } from 'react-router-dom';
 import { Articles } from '../Articles/Articles';
+import { Header } from '../Header/Header'
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
 
 function App () {
   return (
     <div className="App">
-      <h1>The Leak</h1>
       <Router>
         <Routes>
-          <Route exact path="/home" render={() => <Articles card='articles' />} />
+          <Route exact path="/" element={
+            <>
+              <Header />
+              <Articles />
+            </>
+          }/>
           <Route path="/article/:id" render={({ match }) => <ArticleDetails id={match.params.id} />} />
         </Routes>
       </Router>
