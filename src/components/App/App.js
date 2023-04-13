@@ -20,7 +20,7 @@ function App () {
               <Articles />
             </>
           }/>
-          <Route path="/article/:id" render={({ match }) => <ArticleDetails id={match.params.id} />} />
+          <Route path="/article/:id" element={({ match }) => <ArticleDetails id={match.params.id} />} />
         </Routes>
       </Router>
     </div>
