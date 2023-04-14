@@ -7,20 +7,16 @@ import {
 } from 'react-router-dom';
 import { Articles } from '../Articles/Articles';
 import { Header } from '../Header/Header'
-import { ArticleDetails } from '../ArticleDetails/ArticleDetails';
+import ArticleDetails from '../ArticleDetails/ArticleDetails';
 
 function App () {
   return (
     <div className="App">
       <Router>
+          <Header />
         <Routes>
-          <Route exact path="/" element={
-            <>
-              <Header />
-              <Articles />
-            </>
-          }/>
-          <Route path="/article/:id" element={({ match }) => <ArticleDetails id={match.params.id} />} />
+          <Route exact path="/" element={<Articles />} />
+          <Route path="/nyt://article/:id" element={<ArticleDetails />} />
         </Routes>
       </Router>
     </div>

@@ -13,7 +13,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
   box-sizing: border-box;
-  border: 3px solid black;
+  /* border: 3px solid black; */
   /* padding: 10px; */
   height: 100%;
   width: 100%;
@@ -35,6 +35,10 @@
   box-shadow: 10px 14px 33px 1px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 14px 33px 1px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 14px 33px 1px rgba(0,0,0,0.75);
+}
+
+.article-post:hover {
+  transform: translateY(-10px);
 }
 
 .gradient {
