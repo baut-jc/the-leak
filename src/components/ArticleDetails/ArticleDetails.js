@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { fetchData } from '../../api';
 import { useParams } from 'react-router-dom';
-
+import './ArticleDetails.css'
 
 export default function ArticleDetails({match}) {
   const [articles, setArticles] = useState([])
@@ -35,8 +35,12 @@ export default function ArticleDetails({match}) {
   return (
     <div className='article-details'>
       <h3>{selectedArticle.title}</h3>
+        {selectedArticle.multimedia && selectedArticle.multimedia.length > 0 && (
+          <img src={selectedArticle.multimedia[1].url} alt='here' />
+        )}
       <h6>{selectedArticle.byline}</h6>
       <p>{selectedArticle.created_date}</p>
+      <p>{selectedArticle.abstract}</p>
       <a href={selectedArticle.short_url} target='_blank' rel='noreferrer'>Read more</a>
     </div>
   )
