@@ -27,13 +27,15 @@ export const Articles = () => {
   const newsArticles = articles.map((article) => {
     return (
       <Link to={`/${article.uri}`} key={article.uri}>
-        <div 
-          className='article-post'
-          id={article.uri}
-          style={{backgroundImage: `url(${article.multimedia[0].url})`}}>
-            <p>{article.title}</p>
-        </div>
-      </Link>
+          <div 
+            className='article-post'
+            id={article.uri}
+            style={{backgroundImage: `url(${article.multimedia[0].url})`}}>
+              <div className='gradient'>
+                <h3>{article.title}</h3>
+              </div>
+          </div>
+        </Link>
     )
   })
 
